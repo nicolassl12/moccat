@@ -1,0 +1,510 @@
+/* Cores do Moccat
+   #6a7d58 -> verde principal
+   #3e3b09 -> verde escuro (textos, botões, rodapé)
+   #c4ce74 -> verde claro (destaques)
+   #fff    -> branco
+*/
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    color: #3e3b09;
+    background-color: #fff;
+}
+
+img{
+    max-width: 100%;
+    display: block;
+}
+
+/* Navbar - container */
+
+.navbar-container{
+    width: 100%;
+    min-height: 80px;
+    background-color: #6a7d58;
+    padding: 0 2rem;
+}
+
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 80px;
+}
+
+/* o logo fica dentro de um círculo branco para aparecer bem no fundo verde */
+/* logo branco direto no fundo verde, sem círculo, pra não cortar o coração */
+.logo{
+    height: 75px;
+    width: auto;
+}
+
+.navbar-items{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-items li{
+    text-transform: uppercase;
+    margin-left: 25px;
+}
+
+.navbar-items a{
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.5s;
+}
+
+.navbar-items a:not(.default-btn):hover{
+    color: #3e3b09;
+    border-bottom: 2px solid #3e3b09;
+}
+
+.default-btn{
+    display: inline-block;
+    padding: 12px 20px;
+    background-color: #3e3b09;
+    color: #fff;
+    text-decoration: none;
+    border: 3px solid #3e3b09;
+    border-radius: 5px;
+    transition: 0.5s;
+}
+
+.default-btn:hover{
+    border: 3px solid #c4ce74;
+    color: #c4ce74;
+}
+
+/* Banner principal */
+/* Banner principal: 3 blocos lado a lado */
+
+.hero-container{
+    display: flex;
+    gap: 20px;
+    height: 460px;
+    padding: 30px 2rem;
+    background-color: #fff;
+}
+
+.hero-panel{
+    position: relative;
+    flex: 1;
+    min-width: 0;
+    border-radius: 25px;
+    overflow: hidden;
+    transition: flex 0.6s, box-shadow 0.6s, transform 0.6s;
+}
+
+/* o bloco do meio começa maior, igual à referência */
+.hero-panel:nth-child(2){
+    flex: 2;
+}
+
+/* quando o mouse entra no banner, todos voltam ao normal... */
+.hero-container:hover .hero-panel{
+    flex: 1;
+}
+
+/* ...e o bloco com o mouse em cima ganha prioridade */
+.hero-container .hero-panel:hover{
+    flex: 2.5;
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+}
+
+.hero-text{
+    background-color: #9bbc76;
+    padding: 35px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow-y: auto;
+}
+
+.hero-text h1{
+    font-size: 2rem;
+    line-height: 1.2;
+    margin: 0 0 15px;
+}
+
+.hero-text p{
+    font-size: 1.1rem;
+    line-height: 1.5;
+    margin: 0 0 25px;
+}
+
+.hero-text .default-btn{
+    align-self: flex-start;
+}
+
+.hero-image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-caption{
+    position: absolute;
+    left: 15px;
+    right: 15px;
+    bottom: 15px;
+    background-color: rgba(62, 59, 9, 1);
+    color: #fff;
+    padding: 12px 18px;
+    border-radius: 15px;
+    line-height: 1.4;
+    text-align: center;
+}
+
+.hero-caption strong{
+    display: block;
+    color: #c4ce74;
+    font-size: 1.2rem;
+}
+
+/* Títulos das seções */
+
+section{
+    padding: 60px 2rem;
+    background-color: #9bbc76;
+}
+
+section > h2{
+    text-align: center;
+    font-size: 2.2rem;
+    color: #3e3b09;
+    margin: 0 0 10px;
+}
+
+section > p{
+    text-align: center;
+    margin: 0 0 40px;
+}
+
+/* Seção dos gatinhos */
+
+.cats-grid{
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.cat-card{
+    background-color: #fff;
+    border: 2px solid #6a7d58;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+.cat-card:hover{
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(62, 59, 9, 0.2);
+}
+
+.cat-card img{
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+}
+
+.cat-info{
+    padding: 20px;
+}
+
+.cat-info h3{
+    color: #fff;
+    background-color: #6a7d58;
+    display: inline-block;
+    padding: 5px 15px;
+    border-radius: 20px;
+    margin: 0 0 15px;
+}
+
+.cat-info ul{
+    padding-left: 20px;
+    margin: 0 0 15px;
+    line-height: 1.6;
+}
+
+.cat-info ul li::marker{
+    color: #6a7d58;
+}
+
+.cat-info p{
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    border-top: 1px dashed #c4ce74;
+    padding-top: 15px;
+}
+
+/* Seção de doação */
+
+.donation-container{
+    background-color: #6a7d58;
+    color: #fff;
+    text-align: center;
+}
+
+.donation-container h2{
+    color: #fff;
+}
+
+.donation-container p{
+    max-width: 700px;
+    margin: 0 auto 30px;
+    line-height: 1.6;
+}
+
+/* Cardápio (página 2) */
+
+/* Cardápio: um bloco branco só, dividido por categorias em texto */
+
+.menu-card{
+    background-color: #fff;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 50px 60px;
+    border-radius: 8px;
+    box-shadow: 0 10px 25px rgba(62, 59, 9, 0.25);
+}
+
+.menu-category{
+    margin-bottom: 40px;
+}
+
+.menu-category:last-child{
+    margin-bottom: 0;
+}
+
+/* título da categoria com uma linha de cada lado */
+.menu-divider{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    color: #6a7d58;
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin: 0 0 20px;
+}
+
+.menu-divider::before,
+.menu-divider::after{
+    content: "";
+    flex: 1;
+    border-bottom: 2px solid #c4ce74;
+}
+
+.menu-category ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu-category li{
+    display: flex;
+    align-items: flex-start;
+    padding: 10px 0;
+}
+
+.menu-category li::after{
+    content: "";
+    order: 1;
+    flex: 1;
+    height: 0.95em;
+    margin: 0 10px;
+    border-bottom: 2px dotted #9bbc76;
+}
+
+.menu-category .item-name{
+    font-weight: bold;
+}
+
+.menu-category .item-desc{
+    display: block;
+    font-weight: normal;
+    font-size: 0.85rem;
+    margin-top: 4px;
+    color: #6a7d58;
+}
+
+.menu-category .item-price{
+    order: 2;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+/* Footer - Rodapé */
+
+footer{
+    background-color: #3e3b09;
+    color: #fff;
+    border-top: 8px solid #c4ce74;
+    padding: 50px 2rem 20px;
+}
+
+.footer-content{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-content > div:last-child{
+    text-align: right;
+}
+
+footer h4{
+    color: #c4ce74;
+    text-transform: uppercase;
+    margin: 0 0 15px;
+}
+
+footer p{
+    margin: 0 0 8px;
+    line-height: 1.5;
+}
+
+.social-links{
+    list-style: none;
+    padding: 0;
+    margin: 0 0 10px;
+    display: flex;
+    gap: 15px;
+}
+
+.social-links a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-color: #c4ce74;
+    color: #3e3b09;
+    font-size: 1.3rem;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.social-links a:hover{
+    background-color: #fff;
+    transform: scale(1.1);
+}
+
+.copyright{
+    text-align: center;
+    font-size: 0.85rem;
+    color: #c4ce74;
+    border-top: 1px solid #6a7d58;
+    max-width: 1200px;
+    margin: 40px auto 0;
+    padding-top: 20px;
+}
+
+/* Responsividade */
+@media (max-width: 1024px){
+    .cats-grid{
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+/* celulares: menu embaixo do logo e 1 gatinho por linha */
+@media (max-width: 700px){
+    .navbar-container{
+        padding: 10px 1rem;
+    }
+
+    nav{
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .navbar-items{
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px 18px;
+    }
+
+    .navbar-items li{
+        margin-left: 0;
+        font-size: 0.9rem;
+    }
+
+    .main-banner{
+        padding: 50px 1rem;
+    }
+
+    .main-banner h1{
+        font-size: 2rem;
+    }
+
+    .main-banner p{
+        font-size: 1.1rem;
+    }
+
+    section{
+        padding: 40px 1rem;
+    }
+
+    section > h2{
+        font-size: 1.7rem;
+    }
+
+    /* no celular os 3 blocos de fotos ficam um embaixo do outro */
+    .hero-container{
+        flex-direction: column;
+        height: auto;
+        padding: 20px 1rem;
+    }
+
+    .hero-panel,
+    .hero-panel:nth-child(2),
+    .hero-container:hover .hero-panel,
+    .hero-container .hero-panel:hover{
+        flex: none;
+    }
+
+    .hero-image{
+        height: 280px;
+    }
+
+    .menu-card{
+        padding: 30px 20px;
+    }
+
+    .cats-grid,
+    .footer-content{
+        grid-template-columns: 1fr;
+    }
+
+    .footer-content{
+        text-align: center;
+    }
+
+    .footer-content > div:last-child{
+        text-align: center;
+    }
+
+    .social-links{
+        justify-content: center;
+    }
+}
