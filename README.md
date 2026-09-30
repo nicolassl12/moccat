@@ -86,6 +86,6 @@ Nesta atividade o uso de IA foi liberado, então usei o **Claude** como apoio pa
 
 ---
 
-## 👩‍💻 Autora
+## 👩‍💻 Autor
 
 Feito por **Nicolas**. 🐈
