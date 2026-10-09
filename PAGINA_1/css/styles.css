@@ -517,3 +517,36 @@ footer p{
         justify-content: center;
     }
 }
+
+
+/* Botão "Quero doar" (agora é um <button>) */
+button.default-btn{
+    font-family: inherit;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+/* Caixinha com os dados da doação: começa escondida */
+.donation-info{
+    display: none;
+    max-width: 500px;
+    margin: 25px auto 0;
+    padding: 20px;
+    background-color: #fff;
+    color: #3e3b09;
+    border: 3.5px solid #c4ce74;
+    border-radius: 10px;
+}
+
+/* Quando o JavaScript coloca a classe "aberto", ela aparece */
+.donation-info.aberto{
+    display: block;
+}
+
+.donation-info h3{
+    margin-top: 0;
+}
+
+.donation-container .donation-info p{
+    margin: 8px 0;
+}
